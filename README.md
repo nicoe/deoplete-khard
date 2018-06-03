@@ -1,4 +1,4 @@
-# deoplete-abook
+# deoplete-khard
 
 `deoplete-khard` offers asynchronous completion of email addresses using [khard](https://github.com/scheibler/khard) contacts stored in a carddav server.
 Inspired by [deoplete-abook](https://github.com/fszymanski/deoplete-abook).
