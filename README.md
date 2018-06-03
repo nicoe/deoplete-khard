@@ -13,7 +13,3 @@ To install `deoplete-khard`, use your favorite [Neovim](https://neovim.io/) plug
 Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'nicoe/deoplete-khard'
 ```
-
-## Documentation
-
-For more information, see `:help deoplete_abook.txt`.
