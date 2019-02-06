@@ -35,12 +35,8 @@ class Source(Base):
 
     def __fill_cache(self):
         khard_config = config.Config()
-        abooks = []
-        for addressbook in khard_config.get_all_address_books():
-            abooks.append(
-                khard_config.get_address_book(addressbook.name, None))
 
-        for vcard in khard.get_contacts(abooks, '', 'name', False, False):
+        for vcard in khard.get_contacts(khard_config.abooks, '', 'name', False, False):
             for type, email_list in vcard.get_email_addresses().items():
                 for email in email_list:
                     self.__cache.append({'word': "{0} <{1}>".format(
