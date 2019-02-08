@@ -3,9 +3,9 @@ import re
 from khard import khard, config
 from deoplete.source.base import Base
 
-COLON_PATTERN = re.compile(':\s?')
-COMMA_PATTERN = re.compile('.+,\s?')
-HEADER_PATTERN = re.compile('^(Bcc|Cc|From|Reply-To|To):(\s?|.+,\s?)')
+COLON_PATTERN = re.compile(r':\s?')
+COMMA_PATTERN = re.compile(r'.+,\s?')
+HEADER_PATTERN = re.compile(r'^(Bcc|Cc|From|Reply-To|To):(\s?|.+,\s?)')
 
 
 class Source(Base):
