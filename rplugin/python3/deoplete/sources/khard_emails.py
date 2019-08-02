@@ -37,7 +37,7 @@ class Source(Base):
         khard_config = config.Config()
         for vcard in khard.get_contacts(
                 khard_config.abooks, '', 'name', False, False):
-            for type, email_list in vcard.get_email_addresses().items():
+            for type, email_list in vcard.emails.items():
                 for email in email_list:
                     self.__cache.append({'word': "{0} <{1}>".format(
                                 vcard.get_first_name_last_name(), email)})
