@@ -35,6 +35,7 @@ class Source(Base):
 
     def __fill_cache(self):
         khard_config = config.Config()
+        khard_config.init_address_books()
         for vcard in khard.get_contacts(
                 khard_config.abooks, '', 'name', False, False):
             for type, email_list in vcard.emails.items():
