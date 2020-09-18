@@ -1,6 +1,6 @@
 import re
 
-from khard import khard, config
+from khard import khard, config, query
 from deoplete.source.base import Base
 
 COLON_PATTERN = re.compile(r':\s?')
@@ -37,7 +37,7 @@ class Source(Base):
         khard_config = config.Config()
         khard_config.init_address_books()
         for vcard in khard.get_contacts(
-                khard_config.abooks, '', 'name', False, False):
+                khard_config.abooks, query.AnyQuery(), False, False):
             for type, email_list in vcard.emails.items():
                 for email in email_list:
                     self.__cache.append({'word': "{0} <{1}>".format(
